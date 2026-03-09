@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo App</title>
+    <link rel="stylesheet" href="src/style.css">
+<script defer src="main.js"></script></head>
+<body>
+<div id="layout">
+    <div id="sidebar"></div>
+
+    <div id="main">
+        <div id="app"></div>
+    </div>
+</div>
+<div id="todoModal" class="modal hidden">
+  <div class="modal-content">
+
+    <h3 id="modalTitle">Add Todo</h3>
+
+    <label>Title</label>
+    <input id="todoTitle">
+
+    <label>Description</label>
+    <input id="todoDescription">
+
+    <label>Due Date</label>
+    <input id="todoDueDate" type="date">
+
+    <label>Priority</label>
+    <select id="todoPriority">
+      <option>Low</option>
+      <option>Medium</option>
+      <option>High</option>
+    </select>
+
+    <div class="modal-buttons">
+      <button id="cancelTodo">Cancel</button>
+      <button id="saveTodo">Save</button>
+    </div>
+
+  </div>
+</div>
+
+</body>
+</html>
