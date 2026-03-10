@@ -15,14 +15,33 @@ export function render(){
     const addProjectBtn = document.createElement("button");
     addProjectBtn.textContent = "Add Project";
 
-    addProjectBtn.addEventListener("click", ()=> {
-        const name = prompt("Project name :");
+    addProjectBtn.addEventListener("click", () => {
+
+    const modal = document.getElementById("projectModal");
+    modal.classList.remove("hidden");
+
+    document.getElementById("projectName").value = "";
+
+    document.getElementById("saveProject").onclick = () => {
+
+        const name = document.getElementById("projectName").value;
+
         if(!name) return;
 
         const newProject = new Project(name);
+
         appState.addProject(newProject);
+        appState.save();
+
+        modal.classList.add("hidden");
         render();
-    });
+    };
+
+    document.getElementById("cancelProject").onclick = () => {
+        modal.classList.add("hidden");
+    };
+
+});
 
     sidebar.appendChild(title);
     sidebar.appendChild(addProjectBtn);
